@@ -10,12 +10,12 @@ struct book_details
    };
 struct book_details input()
 {
-    FILE *fp;
+    /*FILE *fp;
     fp=fopen("Book_details.txt","a");
     if(fp==0)
     {
         printf("File not found!");
-    }
+    }*/
   struct book_details bd;
   printf("\nEnter the book code:");
   scanf("%d",&bd.book_code);
@@ -27,8 +27,8 @@ struct book_details input()
   gets(bd.name_author);
   printf("\nEnter number of copies available:");
   scanf("%d",&bd.copies);
-  fprintf(fp,"\n%d\t%s\t%s\t%d",bd.book_code,bd.title,bd.name_author,bd.copies);
-  fclose(fp);
+  //fprintf(fp,"\n%d\t%s\t%s\t%d",bd.book_code,bd.title,bd.name_author,bd.copies);
+  //fclose(fp);
   return bd;
   }
 void book_display(struct book_details bd)
@@ -39,16 +39,21 @@ void book_display(struct book_details bd)
    printf("\nNumber of copies available:%d",bd.copies);
    }
 
+/*void program()
+{
+    exit(0);
+}
+*/
 int main()
 {
-    FILE *fp;
+    /*FILE *fp;
     fp=fopen("Book_details.txt","a");
     if(fp==0)
     {
         printf("File not found!");
     }
     fprintf(fp,"\nBOOK CODE\tTITLE\tAUTHOR\tCOPIES");
-    fclose(fp);
+    fclose(fp);*/
 
   struct book_details bdd[50];
   int i,n,c,book_c,book_c2,r,o,t_b=0;
@@ -141,15 +146,18 @@ int main()
 		       {
 			  printf("\nBook Issued!");
 			  printf("\nCopies remaining are:%d",bdd[i].copies-1);
+			  bdd[i].copies-=1;
 			  }
 			if(confirm=='N' || confirm=='n')
 			goto welcome;
 		     }
 		   }
 		   break;
-	//case 7: Exit(0);
-	//break;
+	 //case 7: program();
+	   //     break;
 	default:printf("\nINVALID CHOICE!");
+            goto welcome;
+
       }
     }while(c!=7);
 

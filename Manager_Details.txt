@@ -1,0 +1,5 @@
+***MANAGER LOG***
+
+Name		Salary
+random 1		322
+Random 4		432

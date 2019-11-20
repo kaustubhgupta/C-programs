@@ -10,7 +10,7 @@ int main()
 	{
 		sum+=1/i;		
 	}
-	printf("Sum is %0.2f",sum);
+	printf("Sum is %.2f",sum);
 	
 	
 	return 0;
